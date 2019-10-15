@@ -9,11 +9,11 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js" ></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-    <script type="text/javascript" src="app.js"></script>
+    <script type="text/javascript" src="beamJAVAScrip/app.js"></script>
     <script src="lib/jquery-1.10.1.min.js"></script>
     <script src="lib/jquery-migrate-1.2.1.min.js"></script>
     <link rel="stylesheet" href="dist/drawerJs.css"/>
-    <script src="dist/drawerJs.standalone.js"></script> 
+    <script src="dist/drawerJs.standalone.js"></script>
     <style>
     * {
         box-sizing: border-box;
@@ -34,7 +34,7 @@
         height: 450px; /* only for demonstration, should be removed */
         padding: 0px;
     }
-  
+
     /* Style the list inside the menu */
     nav ul {
         list-style-type: none;
@@ -55,7 +55,7 @@
         display: table;
         clear: both;
     }
-   
+
     /* Style the footer */
     footer {
         background-color:royalblue;
@@ -63,7 +63,7 @@
         text-align: center;
         color: white;
     }
-  
+
 
     /* Responsive layout - makes the two columns/boxes stack on top of each other instead of next to each other, on small screens */
     @media (max-width: 600px) {
@@ -88,15 +88,15 @@
       </br>
       <section>
         <nav>
-          <ul> 
-            <img id = "field" src="image/BEAM1.jpg" alt="Field " width=540 height= 400 >            
+          <ul>
+            <img id = "field" src="image/BEAM1.jpg" alt="Field " width=540 height= 400 >
           </ul>
     </nav>
     <article>
   <div class="form-groub">
     <label for="usr">Team Beam:</label>
     <select name="team" placeholder="team" class="from-control" id="team">
-      <option value="Team name">-ชื่อทีม-</option>
+      <option value=0 >-ชื่อทีม-</option>
       <option value=1 >SpinalRobot</option>
   <!--<option value=2 >IPES</option>
       <option value=3 >Alone</option>
@@ -115,18 +115,14 @@
       </select>
     </div>
     <div class="form-groub">
-    <label for="score" id="counter" value="0" ><span>Score:</span><span>0</span></label>
+    <label for="score" id="counter" value="0" ><span>Score</span></label>
     <input type="score" id="score" style="width:100px;height:25px;" placeholder="score" class="from-control" >
     <div>
     <label id="setsec" for="pwd" value="0">time:</label>
     <input type="text" id="timett" placeholder="time" class="from-control" >
-    <label name="timer" placeholder="time" id="time" class="form-control">3:0</textarea>
     </div>
     </div>
-    <div id = "nowmin">
-    <span>0:</span><span>0</span>
-    </div>
-    <button id="btnSave" name="Save" class="btn btn-primary" onclick="saveOnclick()">Save</button> 
+    <button id="btnSave" name="Save" class="btn btn-primary" onclick="saveOnclick()">Save</button>
     &nbsp;&nbsp;&nbsp;
     <!--<button id="stopbtn" class="btn btn-danger" onclick="stop()">Stop</button>
     &nbsp;&nbsp;&nbsp;-->
@@ -322,18 +318,52 @@
       ctx.drawImage(img,-5,0);
       ctx.beginPath();
       ctx.stroke();
-    </script>
-        <script>
-        // Initialize Firebase
-        var config = {
-          apiKey: "AIzaSyB42BCRah-JMelyOGQeMgjmIqZKji10Kmg",
-          authDomain: "supreme-5b3f5.firebaseapp.com",
-          databaseURL: "https://supreme-5b3f5.firebaseio.com",
-          projectId: "supreme-5b3f5",
-          storageBucket: "supreme-5b3f5.appspot.com",
-          messagingSenderId: "783055164463"
+      </script>
+        <!-- The core Firebase JS SDK is always required and must be listed first -->
+      <script src="https://www.gstatic.com/firebasejs/7.2.0/firebase-app.js"></script>
+
+      <!-- TODO: Add SDKs for Firebase products that you want to use
+         https://firebase.google.com/docs/web/setup#available-libraries -->
+      <script src="https://www.gstatic.com/firebasejs/7.2.0/firebase-analytics.js"></script>
+
+      <script>
+        // Your web app's Firebase configuration
+        var firebaseConfig = {
+          apiKey: "AIzaSyC_iD3_cXNg-G8FEs6TkMpMYzX5CCLUse4",
+          authDomain: "supreme-2562.firebaseapp.com",
+          databaseURL: "https://supreme-2562.firebaseio.com",
+          projectId: "supreme-2562",
+          storageBucket: "supreme-2562.appspot.com",
+          messagingSenderId: "61205019070",
+          appId: "1:61205019070:web:f07bf075cc5092cf2121ef",
+          measurementId: "G-L2D6LY3JRR"
         };
-        firebase.initializeApp(config);
-        </script>
-        </body>
-        </html>
+        // Initialize Firebase
+        firebase.initializeApp(firebaseConfig);
+        firebase.analytics();
+      </script>
+      <script src="https://www.gstatic.com/firebasejs/5.9.1/firebase-database.js"></script>
+  </body>
+</html>
+<script>
+
+function saveOnclick()
+{
+  var team = document.getElementById('team');
+  var score = document.getElementById('score');
+  var time = document.getElementById('timett');
+  var firebaseRef=firebase.database().ref('Beam Open/ROUND1')
+  if (team.value == 1)
+  {
+      var firebaseRef=firebase.database().ref('Beam Open/ROUND1/Team1')
+      firebaseRef.update({Score:score.value, Time:time.value});
+  }
+}
+
+function resetTime()
+{
+  document.getElementById("team").value = (0)
+  document.getElementById("score").value = (' ')
+  document.getElementById("timett").value = (' ')
+}
+</script>
