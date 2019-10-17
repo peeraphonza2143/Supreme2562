@@ -97,20 +97,29 @@
     <label for="usr">Team Beam:</label>
     <select name="team" placeholder="team" class="from-control" id="team">
       <option value=0 >-ชื่อทีม-</option>
-      <option value=1 >SpinalRobot</option>
-  <!--<option value=2 >IPES</option>
-      <option value=3 >Alone</option>
-      <option value=4 >WeHaveNotFram</option>
-      <option value=5 >N.A.Autobot 2</option>
-      <option value=6 >CDV ROBOTICS</option>
-      <option value=7 >B2</option>
-      <option value=8 >B1</option>
-      <option value=9 >STCIOT3</option>
-      <option value=10 >skrcs4</option>
-      <option value=11 >Annoying bot</option>
-      <option value=12 >Papaman</option>
-      <option value=13 >ชื่อทีมไรดีพี่</option>
-      <option value=14 >น้องบ่าวซ่า</option> -->
+      <option value=1 >เดี่ยว-เอมิกา</option>
+      <option value=2 >ไร่ขิง2</option>
+      <option value=3 >ไร่ขิงวิทยา</option>
+      <option value=4 >Blue team</option>
+      <option value=5 >เดี่ยว-นภัสรพี</option>
+      <option value=6 >คลองหม้อแกง</option>
+      <option value=7 >BECON</option>
+      <option value=8 >Robo Hero</option>
+      <option value=9 >TPN</option>
+      <option value=10 >เดี่ยว-จักรพงษ์</option>
+      <option value=11 >Nonny Company 04</option>
+      <option value=12 >เดี่ยว-สาริศ</option>
+      <option value=13 >Nonny Company 01</option>
+      <option value=14 >โรงเรียนบ้านซับน้อยเหนือ</option> 
+      <option value=15 >โรงเรียนบ้านซับน้อยเหนือ</option> 
+      <option value=16 >โรงเรียนบ้านซับน้อยเหนือ</option> 
+      <option value=17 >โรงเรียนบ้านซับน้อยเหนือ</option> 
+      <option value=18 >บ้านยินดี2</option> 
+      <option value=19 >บ้านยินดี1</option> 
+      <option value=20 >ทีม-ปรัชพญา</option> 
+      <option value=21 >TJ07</option> 
+      <option value=22 >Bcc robot 3</option> 
+      <option value=23 >Rapidly</option> 
 
       </select>
     </div>
@@ -352,10 +361,120 @@ function saveOnclick()
   var team = document.getElementById('team');
   var score = document.getElementById('score');
   var time = document.getElementById('timett');
-  var firebaseRef=firebase.database().ref('Beam Open/ROUND1')
+  var firebaseRef=firebase.database().ref('Beam Junior/ROUND1')
   if (team.value == 1)
   {
-      var firebaseRef=firebase.database().ref('Beam Open/ROUND1/Team1')
+      var firebaseRef=firebase.database().ref('Beam Junior/ROUND1/Team1')
+      firebaseRef.update({Score:score.value, Time:time.value});
+  }
+  if (team.value == 2)
+  {
+      var firebaseRef=firebase.database().ref('Beam Junior/ROUND1/Team2')
+      firebaseRef.update({Score:score.value, Time:time.value});
+  }
+  if (team.value == 3)
+  {
+      var firebaseRef=firebase.database().ref('Beam Junior/ROUND1/Team3')
+      firebaseRef.update({Score:score.value, Time:time.value});
+  }
+  if (team.value == 4)
+  {
+      var firebaseRef=firebase.database().ref('Beam Junior/ROUND1/Team4')
+      firebaseRef.update({Score:score.value, Time:time.value});
+  }
+  if (team.value == 5)
+  {
+      var firebaseRef=firebase.database().ref('Beam Junior/ROUND1/Team5')
+      firebaseRef.update({Score:score.value, Time:time.value});
+  }
+  if (team.value == 6)
+  {
+      var firebaseRef=firebase.database().ref('Beam Junior/ROUND1/Team6')
+      firebaseRef.update({Score:score.value, Time:time.value});
+  }
+  if (team.value == 7)
+  {
+      var firebaseRef=firebase.database().ref('Beam Junior/ROUND1/Team7')
+      firebaseRef.update({Score:score.value, Time:time.value});
+  }
+  if (team.value == 8)
+  {
+      var firebaseRef=firebase.database().ref('Beam Junior/ROUND1/Team8')
+      firebaseRef.update({Score:score.value, Time:time.value});
+  }
+  if (team.value == 9)
+  {
+      var firebaseRef=firebase.database().ref('Beam Junior/ROUND1/Team9')
+      firebaseRef.update({Score:score.value, Time:time.value});
+  }
+  if (team.value == 10)
+  {
+      var firebaseRef=firebase.database().ref('Beam Junior/ROUND1/Team10')
+      firebaseRef.update({Score:score.value, Time:time.value});
+  }
+  if (team.value == 11)
+  {
+      var firebaseRef=firebase.database().ref('Beam Junior/ROUND1/Team11')
+      firebaseRef.update({Score:score.value, Time:time.value});
+  }
+  if (team.value == 12)
+  {
+      var firebaseRef=firebase.database().ref('Beam Junior/ROUND1/Team12')
+      firebaseRef.update({Score:score.value, Time:time.value});
+  }
+  if (team.value == 13)
+  {
+      var firebaseRef=firebase.database().ref('Beam Junior/ROUND1/Team13')
+      firebaseRef.update({Score:score.value, Time:time.value});
+  }
+  if (team.value == 14)
+  {
+      var firebaseRef=firebase.database().ref('Beam Junior/ROUND1/Team14')
+      firebaseRef.update({Score:score.value, Time:time.value});
+  }
+  if (team.value == 15)
+  {
+      var firebaseRef=firebase.database().ref('Beam Junior/ROUND1/Team15')
+      firebaseRef.update({Score:score.value, Time:time.value});
+  }
+  if (team.value == 16)
+  {
+      var firebaseRef=firebase.database().ref('Beam Junior/ROUND1/Team16')
+      firebaseRef.update({Score:score.value, Time:time.value});
+  }
+  if (team.value == 17)
+  {
+      var firebaseRef=firebase.database().ref('Beam Junior/ROUND1/Team17')
+      firebaseRef.update({Score:score.value, Time:time.value});
+  }
+  if (team.value == 18)
+  {
+      var firebaseRef=firebase.database().ref('Beam Junior/ROUND1/Team18')
+      firebaseRef.update({Score:score.value, Time:time.value});
+  }
+  if (team.value == 19)
+  {
+      var firebaseRef=firebase.database().ref('Beam Junior/ROUND1/Team19')
+      firebaseRef.update({Score:score.value, Time:time.value});
+  }
+  if (team.value == 20)
+  {
+      var firebaseRef=firebase.database().ref('Beam Junior/ROUND1/Team20')
+      firebaseRef.update({Score:score.value, Time:time.value});
+  }
+  if (team.value == 21)
+  {
+      var firebaseRef=firebase.database().ref('Beam Junior/ROUND1/Team21')
+      firebaseRef.update({Score:score.value, Time:time.value});
+  }
+  if (team.value == 22)
+  {
+      var firebaseRef=firebase.database().ref('Beam Junior/ROUND1/Team22')
+      firebaseRef.update({Score:score.value, Time:time.value});
+  }
+  if (team.value == 23)
+  {
+      var firebaseRef=firebase.database().ref('Beam Junior/ROUND1/Team23')
       firebaseRef.update({Score:score.value, Time:time.value});
   }
 }
